@@ -1,4 +1,4 @@
-// TwoCanvasAnimation.tsx
+// ThreeCanvasAnimation.tsx
 "use client";
 
 import { useEffect, useRef } from "react";
@@ -20,7 +20,7 @@ const TwoCanvasAnimation = () => {
     const scene = new THREE.Scene();
     const camera = new THREE.OrthographicCamera(
       width / -2, // left
-      width / 2,  // right
+      width / 2, // right
       height / 2, // top
       height / -2, // bottom
       0.1,
@@ -63,11 +63,7 @@ const TwoCanvasAnimation = () => {
 
     // Lắng nghe sự kiện scroll để thay đổi frame của animation
     lenis.on("scroll", ({ scroll, limit }) => {
-      // Tăng tốc độ load bằng cách nhân thêm progress với một hệ số (ví dụ: 2)
-      const speedFactor = 2;
-      const rawProgress = (scroll / limit) * speedFactor;
-      // Giới hạn progress từ 0 đến 1
-      const progress = Math.min(rawProgress, 1);
+      const progress = scroll / limit; // Giá trị từ 0 đến 1
       const frameIndex = Math.round(progress * (totalFrames - 1));
       if (textures.current[frameIndex]) {
         material.map = textures.current[frameIndex];
