@@ -1,3 +1,4 @@
+// ThreeCanvasAnimation.tsx
 "use client";
 
 import { useEffect, useRef } from "react";
@@ -7,7 +8,6 @@ import Lenis from "lenis";
 const ThreeCanvasAnimation = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const totalFrames = 40;
- 
   const textures = useRef<THREE.Texture[]>([]);
 
   useEffect(() => {
@@ -16,8 +16,8 @@ const ThreeCanvasAnimation = () => {
     const width = container.clientWidth;
     const height = container.clientHeight;
 
+    // Tạo scene, camera, renderer…
     const scene = new THREE.Scene();
-
     const camera = new THREE.OrthographicCamera(
       width / -2, // left
       width / 2, // right
@@ -32,6 +32,7 @@ const ThreeCanvasAnimation = () => {
     renderer.setSize(width, height);
     container.appendChild(renderer.domElement);
 
+    // Tải textures cho animation
     const loader = new THREE.TextureLoader();
     for (let i = 1; i <= totalFrames; i++) {
       const textureUrl = `/assets/images/SNTMNT_JANE_${i
@@ -41,6 +42,7 @@ const ThreeCanvasAnimation = () => {
       textures.current.push(texture);
     }
 
+    // Tạo mesh plane với texture đầu tiên
     const planeGeometry = new THREE.PlaneGeometry(width, height);
     const material = new THREE.MeshBasicMaterial({
       map: textures.current[0],
@@ -49,19 +51,17 @@ const ThreeCanvasAnimation = () => {
     const planeMesh = new THREE.Mesh(planeGeometry, material);
     scene.add(planeMesh);
 
-    const lenis = new Lenis({
-      smoothWheel: true,
-    });
-
+    // Khởi tạo Lenis để xử lý scroll mượt
+    const lenis = new Lenis({ smoothWheel: true });
 
     function animate(time: number) {
-
       lenis.raf(time);
       renderer.render(scene, camera);
       requestAnimationFrame(animate);
     }
     requestAnimationFrame(animate);
 
+    // Lắng nghe sự kiện scroll để thay đổi frame của animation
     lenis.on("scroll", ({ scroll, limit }) => {
       const progress = scroll / limit; // Giá trị từ 0 đến 1
       const frameIndex = Math.round(progress * (totalFrames - 1));
@@ -71,7 +71,7 @@ const ThreeCanvasAnimation = () => {
       }
     });
 
-    // --- Xử lý resize cửa sổ ---
+    // Xử lý resize cửa sổ
     const handleResize = () => {
       const newWidth = container.clientWidth;
       const newHeight = container.clientHeight;
@@ -96,13 +96,8 @@ const ThreeCanvasAnimation = () => {
     };
   }, []);
 
-  return (
-    // Container có chiều cao lớn để tạo vùng cuộn (ở đây 5000px)
-    <section className="h-[5000px] relative">
-      {/* Container chứa canvas của Three.js được sticky để giữ luôn hiển thị */}
-      <div className="sticky top-0 w-full h-screen" ref={containerRef}></div>
-    </section>
-  );
+  // Chỉ render một div chứa canvas
+  return <div ref={containerRef} className="w-full h-full" />;
 };
 
 export default ThreeCanvasAnimation;
