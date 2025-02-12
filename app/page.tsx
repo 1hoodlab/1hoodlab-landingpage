@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { Moon, Play, User, ChevronDown } from "lucide-react";
+import { Moon, User, ChevronDown, ArrowRight } from "lucide-react";
 import dynamic from "next/dynamic";
 
 const NetworkAnimation = dynamic(
@@ -40,40 +40,33 @@ export default function Page() {
                   href="#"
                   className="text-sm text-gray-300 hover:text-white transition-colors"
                 >
-                  DeFi App
+                  Products
                 </Link>
                 <Link
                   href="#"
                   className="text-sm text-gray-300 hover:text-white transition-colors"
                 >
-                  Assets
+                  Solutions
                 </Link>
                 <Link
                   href="#"
                   className="text-sm text-gray-300 hover:text-white transition-colors"
                 >
-                  Features
+                  Resources
                 </Link>
                 <Link
                   href="#"
                   className="text-sm text-gray-300 hover:text-white transition-colors"
                 >
-                  Pricing
+                  About Us
                 </Link>
-                <Link
-                  href="#"
-                  className="text-sm text-gray-300 hover:text-white transition-colors"
-                >
-                  FAQ
-                </Link>
-                <div className="relative group">
-                  <button className="flex items-center gap-1 text-sm text-gray-300 hover:text-white transition-colors">
-                    Protection
-                    <ChevronDown className="w-4 h-4" />
-                  </button>
-                </div>
               </div>
             </div>
+
+            <button className="flex items-center gap-2 bg-white/10 hover:bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm transition-all border border-white/10 shadow-[0_0_15px_rgba(255,255,255,0.05)]">
+              <User className="w-4 h-4" />
+              <span className="text-sm">Get Started</span>
+            </button>
           </div>
         </nav>
       </header>
@@ -88,15 +81,13 @@ export default function Page() {
         <div className="absolute left-20 top-40 bg-white/5 px-4 py-2 rounded-full backdrop-blur-md border border-white/10 shadow-[0_0_15px_rgba(255,255,255,0.05)]">
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-blue-400 rounded-full shadow-[0_0_10px_rgba(59,130,246,0.5)]" />
-            <span className="text-sm">Cortex</span>
-            <span className="text-xs text-gray-400">20.343</span>
+            <span className="text-sm">Smart Contracts</span>
           </div>
         </div>
 
         <div className="absolute right-20 top-40 bg-white/5 px-4 py-2 rounded-full backdrop-blur-md border border-white/10 shadow-[0_0_15px_rgba(255,255,255,0.05)]">
           <div className="flex items-center gap-2">
-            <span className="text-xs text-gray-400">3.278</span>
-            <span className="text-sm">Quant</span>
+            <span className="text-sm">DeFi Solutions</span>
             <div className="w-2 h-2 bg-purple-400 rounded-full shadow-[0_0_10px_rgba(168,85,247,0.5)]" />
           </div>
         </div>
@@ -104,42 +95,38 @@ export default function Page() {
         <div className="absolute left-32 bottom-40 bg-white/5 px-4 py-2 rounded-full backdrop-blur-md border border-white/10 shadow-[0_0_15px_rgba(255,255,255,0.05)]">
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-green-400 rounded-full shadow-[0_0_10px_rgba(74,222,128,0.5)]" />
-            <span className="text-sm">Aelf</span>
-            <span className="text-xs text-gray-400">19.245</span>
+            <span className="text-sm">Asset Security</span>
           </div>
         </div>
 
         <div className="absolute right-32 bottom-40 bg-white/5 px-4 py-2 rounded-full backdrop-blur-md border border-white/10 shadow-[0_0_15px_rgba(255,255,255,0.05)]">
           <div className="flex items-center gap-2">
-            <span className="text-xs text-gray-400">4.03</span>
-            <span className="text-sm">Meeton</span>
+            <span className="text-sm">Blockchain Innovation</span>
             <div className="w-2 h-2 bg-yellow-400 rounded-full shadow-[0_0_10px_rgba(250,204,21,0.5)]" />
           </div>
         </div>
 
         {/* Center Content */}
         <div className="relative z-10 flex flex-col items-center justify-center px-6 text-center">
-          <button className="mb-8 p-4 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md transition-all border border-white/10 shadow-[0_0_15px_rgba(255,255,255,0.05)] group">
-            <Play className="w-6 h-6 group-hover:scale-110 transition-transform" />
-          </button>
-
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">
-            1HOODLABS
+            1HOODLAB
           </h1>
+          <h2 className="text-3xl md:text-4xl font-semibold mb-6 text-gray-300">
+            Revolutionizing Blockchain Technology
+          </h2>
 
           <p className="text-gray-400 max-w-2xl mb-12">
-            at 1HOODLAB, we are at the forefront of transforming digital
-            experiences by leveraging blockchain, GameFi, and Web3 technologies.
-            Our mission is to build a decentralized future that empowers
-            communities, creators, and gamers worldwide.
+            Empowering the future of decentralized finance with cutting-edge
+            blockchain solutions and innovative smart contract technology.
           </p>
 
           <div className="flex items-center gap-4">
-            <button className="px-6 py-3 bg-white/10 hover:bg-white/20 rounded-full backdrop-blur-md transition-all border border-white/10 shadow-[0_0_15px_rgba(255,255,255,0.05)]">
-              Open App
+            <button className="px-6 py-3 bg-white/10 hover:bg-white/20 rounded-full backdrop-blur-md transition-all border border-white/10 shadow-[0_0_15px_rgba(255,255,255,0.05)] flex items-center gap-2">
+              <span>Explore Our Solutions</span>
+              <ArrowRight className="w-4 h-4" />
             </button>
             <button className="px-6 py-3 bg-white text-black rounded-full hover:bg-opacity-90 transition-all shadow-[0_0_15px_rgba(255,255,255,0.2)]">
-              Discover More
+              Get Started
             </button>
           </div>
         </div>
@@ -149,41 +136,35 @@ export default function Page() {
           <div className="w-6 h-6 rounded-full border border-gray-600 flex items-center justify-center">
             <ChevronDown className="w-4 h-4" />
           </div>
-          <span className="text-sm">02:03 · Scroll down</span>
-        </div>
-
-        {/* DeFi Horizons */}
-        <div className="absolute bottom-8 right-8 flex items-center gap-4">
-          <span className="text-sm text-gray-400">DeFi Horizons</span>
-          <div className="flex gap-2">
-            <div className="w-8 h-1 bg-white rounded-full shadow-[0_0_10px_rgba(255,255,255,0.5)]" />
-            <div className="w-8 h-1 bg-gray-700 rounded-full" />
-          </div>
+          <span className="text-sm">Scroll to discover more</span>
         </div>
       </section>
 
       {/* Features Section */}
       <section className="relative z-10 py-32 bg-gradient-to-b from-transparent to-black/50">
         <div className="container mx-auto px-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
+            Our Core Offerings
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                title: "Secure Assets",
+                title: "Advanced Smart Contracts",
                 description:
-                  "Advanced encryption and multi-layer security protocols protect your digital assets",
+                  "Develop and deploy secure, efficient smart contracts tailored to your specific needs.",
+                icon: "🔗",
+              },
+              {
+                title: "DeFi Integration",
+                description:
+                  "Seamlessly integrate decentralized finance solutions into your existing systems.",
+                icon: "💱",
+              },
+              {
+                title: "Blockchain Security",
+                description:
+                  "Implement cutting-edge security measures to protect your assets and transactions.",
                 icon: "🛡️",
-              },
-              {
-                title: "Smart Contracts",
-                description:
-                  "Automated, trustless transactions powered by blockchain technology",
-                icon: "📝",
-              },
-              {
-                title: "Real-time Analytics",
-                description:
-                  "Monitor your portfolio with advanced tracking and insights",
-                icon: "📊",
               },
             ].map((feature, index) => (
               <div
@@ -199,61 +180,63 @@ export default function Page() {
         </div>
       </section>
 
+      {/* CTA Section */}
+      <section className="relative z-10 py-24 bg-gradient-to-t from-transparent to-black/50">
+        <div className="container mx-auto px-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Ready to Transform Your Blockchain Experience?
+          </h2>
+          <p className="text-gray-400 max-w-2xl mx-auto mb-12">
+            Join the 1Hoodlab ecosystem and unlock the full potential of
+            blockchain technology for your business.
+          </p>
+          <button className="px-8 py-4 bg-white text-black rounded-full hover:bg-opacity-90 transition-all shadow-[0_0_15px_rgba(255,255,255,0.2)] text-lg font-semibold">
+            Schedule a Demo
+          </button>
+        </div>
+      </section>
+
       {/* Partners */}
       <footer className="relative z-10 py-16 bg-black/50 backdrop-blur-md border-t border-white/5">
         <div className="container mx-auto px-6">
           <h2 className="text-center text-gray-400 mb-12">
-            Trusted by leading companies
+            Trusted by Industry Leaders
           </h2>
           <div className="flex flex-wrap items-center justify-center gap-12 opacity-50">
             <Image
               src="/placeholder.svg"
-              alt="Vercel"
+              alt="Partner 1"
               width={100}
               height={40}
-              className="h-6 w-auto"
+              className="h-8 w-auto"
             />
             <Image
               src="/placeholder.svg"
-              alt="Loom"
+              alt="Partner 2"
               width={100}
               height={40}
-              className="h-6 w-auto"
+              className="h-8 w-auto"
             />
             <Image
               src="/placeholder.svg"
-              alt="Cash App"
+              alt="Partner 3"
               width={100}
               height={40}
-              className="h-6 w-auto"
+              className="h-8 w-auto"
             />
             <Image
               src="/placeholder.svg"
-              alt="Loops"
+              alt="Partner 4"
               width={100}
               height={40}
-              className="h-6 w-auto"
+              className="h-8 w-auto"
             />
             <Image
               src="/placeholder.svg"
-              alt="Zapler"
+              alt="Partner 5"
               width={100}
               height={40}
-              className="h-6 w-auto"
-            />
-            <Image
-              src="/placeholder.svg"
-              alt="Ramp"
-              width={100}
-              height={40}
-              className="h-6 w-auto"
-            />
-            <Image
-              src="/placeholder.svg"
-              alt="Raycest"
-              width={100}
-              height={40}
-              className="h-6 w-auto"
+              className="h-8 w-auto"
             />
           </div>
         </div>
