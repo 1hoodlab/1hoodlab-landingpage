@@ -228,7 +228,7 @@ export function PortfolioV2Section() {
   return (
     <section
       ref={sectionRef}
-      className="relative z-10 overflow-hidden bg-[#dadada] pt-[170px] pb-[120px] text-[#111] md:pb-[200px]"
+      className="relative z-10 -mt-px overflow-hidden bg-[#dadada] pt-[171px] pb-[120px] text-[#111] md:pb-[200px]"
     >
       <div ref={contentRef} className="@container mx-auto w-full max-w-[1440px] px-4 md:px-10" id="portfolio">
         <div className="mx-auto mb-[80px] flex max-w-[668px] flex-col items-center gap-[15px] text-center md:mb-[100px]">
